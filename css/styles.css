@@ -1,0 +1,399 @@
+html {
+    box-sizing: border-box; /*Para que no sea tomado en cuenta el margin y padding en la medida de los elementos*/
+    font-size: 62.5%; /*Reset para Rems - 62.5% = 10px de 16px (medida por default es 16px y lo cambiamos a 10px)*/
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/*Globales*/
+img {
+    max-width: 100%; /*Utilizar esta declaración en todos los proyectos garantiza que las imagenes se ajusten al contenedor*/
+}
+
+.contenedor {
+    max-width: 120rem; /*Ocupar un maximo de ancho de 1200px de la pantalla*/
+    margin: 0 auto; /*Sin margen vertical, auto horizontal*/
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 3.4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2.6rem;
+}
+
+
+/*Utilidades*/
+.section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+.d-block {
+    display: block!important;
+}
+
+.contenido-centrado {
+    max-width: 800px;
+}
+
+/*Botones*/
+.boton {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    display: inline-block;
+    text-align: center;
+    border: none;
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.boton-amarillo {
+    background-color: #E08709;
+}
+
+.boton-verde {
+    background-color: #71B100;
+}
+
+/*Header*/
+.site-header {
+    background-color: #333333;
+    padding: 1rem 0 3rem 0;
+}
+
+.site-header.inicio {
+    background-image: url(../img/header.jpg);
+    background-position: center center; /*left - right centrado*/
+    background-size: cover; /*Escala la imagen de fondo al mayor tamaño posible sin estirarla. Si las proporciones de la imagen difieren de las del elemento, es recortada vertical u horizontalmente para que no quede un espacio vacío.*/
+    height: 100vh; /*Ocupa el 100% de la altura de la pantalla.*/
+    min-height: 60rem; /*Altura minima de 600px para ocupar el 100% de la altura de la pantalla*/
+}
+
+.contenido-header {
+    height: 100%; /*Para que tome todo el tamaño de altura del contenedor padre*/
+    display: flex;
+    flex-direction: column; /*Para posicionar el contenido de arriba hacia abajo*/
+    justify-content: space-between; /*Deja espacio verticar entre los hijos del div (barra y el h1)*/
+}
+
+.contenido-header h1 {
+    color: #ffffff;
+    padding-bottom: 2rem;
+    max-width: 60rem;
+    line-height: 2;
+}
+
+.barra {
+    display: flex; /*Modalidad flexbox*/
+    justify-content: space-between; /*Deja espacio entre los 2 elementos hijos en el div posicionando uno al principio y otro al final horizontalmente.*/
+    padding-top: 3rem; /*Separación superior hacia adentro con respecto al mismo elemento*/
+    align-items: center; /*Alinear los elementos hijos en el div al centro verticalmente*/
+}
+
+/*Navegacion*/
+.navegacion a {
+    color: #ffffff; /*Color en hexadecimal*/
+    text-decoration: none;
+    font-size: 1.8rem; /*18px*/
+    margin-right: 2rem; /*20px*/
+}
+
+.navegacion a:hover {
+    color: #71B100;
+}
+
+.navegacion a:last-of-type {
+    margin: 0; /*Al ultimo enlace de la navegación no aplicar margin*/
+}
+
+/*Iconos nosotros*/
+.iconos-nosotros {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icono {
+    flex-basis: calc(33.3% - 1rem); /*Toma el total del ancho y lo divide entre los 3 elementos restandole 1rem*/
+    text-align: center;
+}
+
+.icono h3 {
+    text-transform: uppercase;
+}
+
+/*Anuncios*/
+.contenedor-anuncios {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /*Para colocar los elementos en 2 filas de 3 cada una*/
+}
+
+.anuncio {
+    flex-grow: 0; /*Para que los elementos no crezcan*/
+    flex-shrink: 0; /*Para que no encoja los elementos*/
+    flex-basis: calc(33.3% - 1rem);
+    border: 1px solid #b5b5b5;
+    background-color: #f5f5f5;
+    margin-bottom: 2rem;
+}
+
+.contenido-anuncio {
+    padding: 2rem;
+}
+
+.contenido-anuncio h3, 
+.contenido-anuncio p {
+    margin: 0;
+}
+
+.precio {
+    color: #71b100;
+    font-weight: 700;
+}
+
+.iconos-caracteristicas {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+    max-width: 500px;
+}
+
+.iconos-caracteristicas li {
+   /* flex: 1;*/
+    display: flex;
+
+}
+
+.iconos-caracteristicas li img {
+    margin-right: 2rem;
+}
+
+.ver-todas {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*Contacto Home*/
+.imagen-contacto {
+    background-image: url(../img/encuentra.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 40rem;
+    display: flex;
+    align-items: center;
+}
+
+.contenido-contacto {
+    flex: 1; /*Cuando hay un elemento toma todo el tamaño del contenedor flex y se centra, por eso se coloca este valor*/
+    color: #ffffff;
+}
+
+.contenido-contacto p {
+    font-size: 1.8rem;
+}
+
+/*Sección inferior*/
+.seccion-inferior {
+    display: flex;
+    justify-content: space-between;
+}
+
+.seccion-inferior .blog {
+    flex-basis: 60%; /*Toma el 60% del contenedor padre*/
+}
+
+.seccion-inferior .testimoniales {
+    flex-basis: calc(40% - 2rem);
+}
+
+.entrada-blog {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.entrada-blog:last-of-type {
+    margin-bottom: 0;
+}
+
+.entrada-blog .imagen {
+    flex-basis: 40%;
+}
+
+.entrada-blog .texto-entrada {
+    flex-basis: calc(60% - 3rem);
+}
+
+.texto-entrada a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.texto-entrada h4 {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.texto-entrada h4::after {
+    content: '';
+    display: block; /*Permite darle altura y anchura al elemento*/
+    width: 15rem;
+    height: .5rem;
+    background-color: #71B100;
+    margin-top: 1rem;
+}
+
+.texto-entrada span {
+    color: #E08709;
+}
+
+/*Testimoniales*/
+.testimonial {
+    background-color: #71B100;
+    font-size: 2.4rem;
+    padding: 2rem;
+    color: #ffffff;
+    border-radius: 2rem;
+}
+
+.testimonial p {
+    text-align: right;
+}
+
+.testimonial blockquote::before {
+    content: '';
+    background-image: url(../img/comilla.svg);
+    width: 4rem;
+    height: 4rem;
+    position: absolute;/*Se le da position absolute al elemento padre para poder posicionarl el elemento hijo dentro de este con top-left-right-bottom y colocandole position relative*/
+    left: -2rem;
+}
+
+.testimonial blockquote {
+    position: relative;
+    padding-left: 5rem;
+    font-weight: 300;
+}
+
+/*Footer*/
+.site-footer {
+    background-color: #333333;
+    margin: 0;
+}
+
+.contenedor-footer {
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.copyright {
+    margin: 0;
+    color: #ffffff;
+}
+
+/*Paginas internas*/
+/*Nosotros*/
+.contenido-nosotros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /*Divide el espacio en partes iguales para los 2 elementos dentro del div*/
+    grid-column-gap: 2rem; /*Espacio entre las 2 columnas*/
+}
+
+.texto-nosotros blockquote {
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0 0 3rem 0;
+}
+
+/*Anuncios*/
+.resumen-propiedad {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Contacto*/
+.contacto p {
+    font-size: 1.4rem;
+    color: #4f4f4f;
+    margin: 2rem 0 0 0;
+}
+
+legend {
+    font-size: 2rem;
+    color: #4f4f4f;
+}
+label {
+    display: block; /*Hace que elemento tome todo el espacio disponible*/
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+input:not([type="submit"]),
+textarea {
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    background-color: #E1E1E1;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+select {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="radio"] {
+    width: auto; /*Solo toma el ancho que ocupa el elemento radio*/
+    margin: 0;
+}
+
+textarea {
+    height: 20rem;
+}
+
+.forma-contacto {
+    max-width: 30rem; /*Para que el div solo ocupe 300px y flex no deje los elementos tan separados*/
+    display: flex;
+    justify-content: space-between; /*Alinear horizontalmente*/
+    align-items: center; /*Alinear verticalmente*/
+}
